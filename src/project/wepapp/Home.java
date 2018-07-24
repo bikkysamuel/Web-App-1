@@ -1,4 +1,4 @@
-package bikkysamuel.wepapp;
+package project.wepapp;
 
 import java.io.IOException;
 import java.io.PrintWriter;
