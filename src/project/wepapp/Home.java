@@ -19,8 +19,9 @@ public class Home extends HttpServlet
 	{	
 		String str = "PROJECT : WEB APP <br/> DATE :: "  +  new Date();
 		
+		String str2 = "";
 		response.setContentType("text/html");
-		response.setIntHeader("Refresh", 1);
+		//response.setIntHeader("Refresh", 1);
 		PrintWriter out = response.getWriter();
 		out.println(str);
 	}
