@@ -19,11 +19,12 @@ public class Home extends HttpServlet
 	{	
 		String str = "PROJECT : WEB APP <br/> DATE :: "  +  new Date();
 		
-		String str2 = "";
+		String loginHtmlStr = "<br/><br/>Username : <input type = \"text\" id = \"username\" required/>"
+					+ "<br/>Password : <input type = \"password\" id = \"password\" required/>";
 		response.setContentType("text/html");
 		//response.setIntHeader("Refresh", 1);
 		PrintWriter out = response.getWriter();
-		out.println(str);
+		out.println(str + loginHtmlStr);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
