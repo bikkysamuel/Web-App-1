@@ -17,14 +17,13 @@ public class Home extends HttpServlet
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{	
+		HtmlLoginPage htmlLoginPage = new HtmlLoginPage();
 		String str = "PROJECT : WEB APP <br/> DATE :: "  +  new Date();
 		
-		String loginHtmlStr = "<br/><br/>Username : <input type = \"text\" id = \"username\" required/>"
-					+ "<br/>Password : <input type = \"password\" id = \"password\" required/>";
 		response.setContentType("text/html");
 		//response.setIntHeader("Refresh", 1);
 		PrintWriter out = response.getWriter();
-		out.println(str + loginHtmlStr);
+		out.println(str + htmlLoginPage.code);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
@@ -33,4 +32,15 @@ public class Home extends HttpServlet
 		doGet(request, response);
 	}
 
+}
+
+class HtmlLoginPage
+{
+	String code;
+
+	HtmlLoginPage()
+	{
+		this.code = "<form action = \"checkLogin\" method = \"GET\"> <br/><br/>Username : <input type = \"text\" id = \"username\" required/>"
+		+ "<br/>Password : <input type = \"password\" id = \"password\" required/> </form>";
+	}
 }
